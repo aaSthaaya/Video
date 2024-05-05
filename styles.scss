@@ -1,0 +1,289 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+$primary-color: hsl(205, 86%, 17%);
+$primary-color-light: #49a6e9;
+$primary-color-darkest: hsl(205, 86%, 17%);
+$primary-color-dark: hsl(205, 77%, 27%);
+$primary-color-darker: hsl(205, 72%, 37%);
+$primary-color-darkish: hsl(205, 63%, 48%);
+$primary-color-lighter: hsl(205, 89%, 70%);
+$primary-color-lightest: hsl(205, 90%, 76%);
+$primary-color-lightest-1: hsl(205, 86%, 81%);
+$primary-color-lightest-2: hsl(205, 90%, 88%);
+$primary-color-lightest-3: hsl(205, 100%, 96%);
+$grey-darkest: hsl(209, 61%, 16%);
+$grey-darker: hsl(211, 39%, 23%);
+$grey-dark: hsl(209, 34%, 30%);
+$grey: hsl(209, 28%, 39%);
+$grey-light: hsl(210, 22%, 49%);
+$grey-lighter: hsl(209, 23%, 60%);
+$grey-lightest: hsl(211, 27%, 70%);
+$grey-lightest-1: hsl(210, 31%, 80%);
+$grey-lightest-2: hsl(212, 33%, 89%);
+$grey-lightest-3: hsl(210, 36%, 96%);
+$white: #fff;
+$red-dark: hsl(360, 67%, 44%);
+$red-light: hsl(360, 71%, 66%);
+$green-dark: hsl(125, 67%, 44%);
+$green-light: hsl(125, 71%, 66%);
+$black: #222;
+$ff-primary: "Roboto", sans-serif;
+$ff-secondary: "Open Sans", sans-serif;
+$transition: all 0.3s linear;
+$spacing: 0.25rem;
+$radius: 0.5rem;
+$light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+$dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+$max-width: 1170px;
+$fixed-width: 620px;
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $ff-secondary;
+    background: $grey-lightest-3;
+    color: $grey-darkest;
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img:not(.logo) {
+    width: 100%;
+}
+
+img {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: $spacing;
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    font-family: $ff-primary;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 0.875rem;
+}
+
+p {
+    margin-bottom: 1.25rem;
+    color: $grey-light;
+}
+
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    body {
+        font-size: 1rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        line-height: 1;
+    }
+}
+
+/*  global classes */
+
+.btn {
+    text-transform: uppercase;
+    background: transparent;
+    color: $black;
+    padding: 0.375rem 0.75rem;
+    letter-spacing: $spacing;
+    display: inline-block;
+    transition: $transition;
+    font-size: 0.875rem;
+    border: 2px solid $black;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: $radius;
+}
+
+.btn:hover {
+    color: $white;
+    background: $black;
+}
+
+/* section */
+
+.section {
+    padding: 5rem 0;
+}
+
+.section-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: $max-width;
+}
+
+@media screen and (min-width: 992px) {
+    .section-center {
+        width: 95vw;
+    }
+}
+
+main {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    z-index: 999;
+    transition: $transition;
+}
+
+.hide-preloader {
+    z-index: -999;
+    visibility: hidden;
+}
+
+header {
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+h1 {
+    color: $white;
+}
+
+/* switch button */
+
+.switch-btn {
+    position: absolute;
+    bottom: 7%;
+    left: 7%;
+    width: 7rem;
+    height: 2rem;
+    display: flex;
+    border-radius: $radius;
+    align-items: center;
+    justify-content: space-around;
+    border: none;
+    transition: $transition;
+}
+
+.switch-btn span {
+    display: inline-block;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    color: $primary-color-light;
+}
+
+.switch {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: $primary-color-light;
+    border-radius: $radius;
+    margin: 0;
+    display: block;
+    transition: $transition;
+}
+
+.slide .switch {
+    left: 50%;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
